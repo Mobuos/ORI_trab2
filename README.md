@@ -14,5 +14,7 @@
         Inserção sempre em um nó folha, mantendo as propriedades da árvore-B.
         
         Retorna o nó no qual a chave foi inserida, e um índice `i` indicando a posição de inserção
+        
+---
 
-
+[<sup>Tasks do vscode para compilação em linux</sup>](https://gist.github.com/Mobuos/6661c235340bd8d46eadafc77b5a4f40)
