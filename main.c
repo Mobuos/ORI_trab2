@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "arvoreB.h"
+
 int main(int argc, char *argv[])
 {
     int t;
