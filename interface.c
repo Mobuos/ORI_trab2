@@ -19,20 +19,17 @@ enum Operacao inputOperacao(){
     switch (op)
     {
     case 1:
-        printf("Busca\n");
         return Busca;
         break;
     case 2:
-        printf("Insercao\n");
         return Insercao;
         break;
     case 3:
-        printf("Finalizando...\n");
         return Finalizar;
         break;
     default:
         //TODO Verificar input
-        printf("Valor inválido, finalizando...");
+        printf("interface: Valor inválido, finalizando...\n");
         return Finalizar;
         break;
     }
