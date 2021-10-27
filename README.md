@@ -1,1 +1,18 @@
-# ORI_trab2
+# Trabalho de ORI 2
+
+- Implementar uma árvore-B em _memória principal_
+- Após criar a árvore, o programa deve ser capaz de realizar as operações de 
+    - **Busca**
+        
+        Recebe como parâmetro uma chave a ser localizada, retorna o nó no qual a chave foi encontrada juntamente de um índice `i` indicando a posição da chave no nó.
+        
+        Se a chave não estiver na árvore a busca deve retornar a mensagem "_CHAVE NÃO ENCONTRADA_"
+    - **Inserção**
+    
+        Recebe como parâmetro uma chave a ser inserida.
+        
+        Inserção sempre em um nó folha, mantendo as propriedades da árvore-B.
+        
+        Retorna o nó no qual a chave foi inserida, e um índice `i` indicando a posição de inserção
+
+
