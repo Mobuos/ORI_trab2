@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     }
 
     //TODO: Criar árvore de ordem t
-    printf("main: Criar arvore de ordem %d", t); //Debug
+    printf("main: Criar arvore de ordem %d\n", t); //Debug
     
 
     int op;
