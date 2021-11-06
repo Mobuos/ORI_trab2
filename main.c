@@ -1,17 +1,44 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "interface.h"
+#include "testes.h"
 #include "arvoreB.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-    int t = inputOrdem();
-    // Criar árvore de ordem t
+    // Determina se serão usados os testes automatizados
+    int teste;
+    teste = 0;
+    FILE *inFile;
+    if(argc == 2){
+        teste = 1;
+        
+        // Abre arquivo
+        inFile = fopen(argv[1], "r");
+        if(inFile == NULL){
+            printf("Falha na abertura do arquivo\n");
+            exit(1);
+        }
+    }
 
-    printf("%d\n", t); //Debug
+    int t;
+    if(teste){
+        t = autoInOrdem(inFile);
+    }else{
+        t = inputOrdem(inFile);
+    }
+
+    //TODO: Criar árvore de ordem t
+    printf("main: Criar arvore de ordem %d", t); //Debug
+    
 
     int op;
     do{
-        op = inputOperacao();
+        if(teste){
+            op = autoInOperacao(inFile);
+        }else{
+            op = inputOperacao();
+        }
         switch (op)
         {
         case Insercao:
