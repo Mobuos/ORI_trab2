@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Recebe a variável t (Seja do usuário ou do arquivo de testes)
     int t;
     if(teste){
         t = autoInOrdem(inFile);
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
     //TODO: Criar árvore de ordem t
     printf("main: Criar arvore de ordem %d\n", t); //Debug
     
-
+    // Loop principal de operações sobre a árvore B
     int op;
     do{
         if(teste){
@@ -56,6 +57,11 @@ int main(int argc, char *argv[])
             break;
         }
     }while(op != Finalizar);
+
+    // Fecha o arquivo de testes caso necessário
+    if(teste){
+        fclose(inFile);
+    }
 
     return 0;
 }
