@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "interface.h"
 #include "testes.h"
 #include "arvoreB.h"
@@ -7,11 +8,11 @@
 int main(int argc, char *argv[])
 {
     // Determina se serão usados os testes automatizados
-    int teste;
-    teste = 0;
+    bool teste;
+    teste = false;
     FILE *inFile;
     if(argc == 2){
-        teste = 1;
+        teste = true;
         
         // Abre arquivo
         inFile = fopen(argv[1], "r");
