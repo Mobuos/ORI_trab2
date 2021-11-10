@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
         // Abre arquivo
         inFile = fopen(argv[1], "r");
         if(inFile == NULL){
-            printf("Falha na abertura do arquivo\n");
+            printf("Erro: Falha na abertura do arquivo\n");
             exit(1);
         }
     }
@@ -30,10 +30,14 @@ int main(int argc, char *argv[])
     }
 
     //TODO: Criar árvore de ordem t
-    printf("main: Criar arvore de ordem %d\n", t); //Debug
+    ArvoreB* pRaizAB = NULL;
+    //printf("main: Criar arvore de ordem %d\n", t);
+    criaArvore(t, pRaizAB);
     
     // Loop principal de operações sobre a árvore B
     struct Operacao op = {Finalizar, -1};
+    Node* pNodeAtual = NULL;
+    int indice;
     do{
         if(teste){
             op = autoInOperacao(inFile);
@@ -43,13 +47,17 @@ int main(int argc, char *argv[])
         switch (op.tipo)
         {
         case Insercao:
-            printf("main: Insercao de %d\n", op.param);
+            //printf("main: Insercao de %d\n", op.param);
+            indice = insereArvore(pRaizAB, op.param, pNodeAtual);
+            indice != -1 ? printf("Indice: %d\n", indice) : printf("Erro: Insercao falhou\n");
             break;
         case Busca:
-            printf("main: Busca de %d\n", op.param);
+            //printf("main: Busca de %d\n", op.param);
+            indice = buscaArvore(pRaizAB, op.param, pNodeAtual);
+            indice != -1 ? printf("Indice: %d\n", indice) : printf("CHAVE NAO ENCONTRADA!\n");
             break;
         case Finalizar:
-            printf("main: Finalizando...\n");
+            printf("Finalizando...\n");
             break;
         default:
             printf("Erro: Operacao recebida da interface inválida\n");

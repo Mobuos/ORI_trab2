@@ -21,18 +21,18 @@ int lerProxInteiro(FILE *in){
 
 // Retorna a ordem (t) requisitada
 int autoInOrdem(FILE *in){
-    printf("testes: Lendo ordem do arquivo...\n");
+    printf("> Lendo ordem do arquivo...\n");
     
     int t = -1;
     t = lerProxInteiro(in);
 
-    printf("testes: ordem = %d\n", t);
+    printf("> ordem = %d\n", t);
     return t;
 }
 
 // Retorna a operação requisitada
 struct Operacao autoInOperacao(FILE *in){
-    printf("testes: Lendo operacao...\n");
+    printf("> Lendo operacao...\n");
     int opCode = 0;
     int param = -1;
     struct Operacao op;
@@ -43,26 +43,26 @@ struct Operacao autoInOperacao(FILE *in){
     {
     case 1:
         // Busca
-        printf("testes: Operacao busca (%d)\n", opCode);
+        printf("> Operacao busca (%d)\n", opCode);
         param = lerProxInteiro(in);
         op.tipo = Busca;
         op.param = param;
         break;
     case 2:
         // Inserção
-        printf("testes: Operacao insercao (%d)\n", opCode);
+        printf("> Operacao insercao (%d)\n", opCode);
         param = lerProxInteiro(in);
         op.tipo = Insercao;
         op.param = param;
         break;
     case 3:
         // Finalizar
-        printf("testes: Operacao finalizar (%d)\n", opCode);
+        printf("> Operacao finalizar (%d)\n", opCode);
         op.tipo = Finalizar;
         break;
     default:
         // Padrão
-        printf("testes: Valor inválido (%d), finalizando\n", opCode);
+        printf("> Valor inválido (%d), finalizando\n", opCode);
         op.tipo = Finalizar;
         break;
     }
