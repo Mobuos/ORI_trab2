@@ -3,10 +3,20 @@
 
 #include "interface.h" //enum
 
-// Retorna a ordem (t) requisitada
+/*
+ * autoInOrdem()
+ * Obtém a ordem para a árvore B
+ * 
+ * Retorna a ordem especificada no arquivo de testes
+ */
 int autoInOrdem();
 
-/// Retorna a operação requisitada
+/*
+ * autoInOperacao()
+ * Obtém a próxima operação para a árvore B
+ *
+ * Retorna a operação especificada no arquivo de testes
+ */
 enum Operacao autoInOperacao();
 
 #endif

@@ -25,7 +25,7 @@ int autoInOrdem(FILE *in){
     return t;
 }
 
-/// Retorna a operação requisitada
+// Retorna a operação requisitada
 enum Operacao autoInOperacao(FILE *in){
     printf("testes: Lendo operacao...\n");
 
