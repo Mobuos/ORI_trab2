@@ -16,7 +16,8 @@ int autoInOrdem(FILE *in);
  * autoInOperacao()
  * Obtém a próxima operação para a árvore B
  *
- * Retorna a operação especificada no arquivo de testes
+ * Retorna um struct de operação de acordo com o arquivo
+ * (Struct em interface.h)
  */
 struct Operacao autoInOperacao(FILE *in);
 

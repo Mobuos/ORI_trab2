@@ -6,8 +6,8 @@ enum TipoOperacao {Busca, Insercao, Finalizar};
 
 // Struct de retorno para input de operações, inclue o tipo e um parâmetro
 struct Operacao{
-    enum TipoOperacao tipo;
-    int param;
+    enum TipoOperacao tipo; // Tipo da operação
+    int param; // A chave na qual executar a operação
 };
 
 /*
@@ -22,8 +22,7 @@ int inputOrdem();
  * inputOperacao()
  * Adquire a operação a ser feita na árvore
  * 
- * Retorna a operação requisitada pelo usuário, correspondendo
- *  a um enum.
+ * Retorna um struct de operação de acordo com os valores requisitados
  */
 struct Operacao inputOperacao();
 
