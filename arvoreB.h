@@ -22,7 +22,7 @@ typedef struct{
  * criaArvore()
  * Cria uma nova árvore B com um nó inicial vazio
  * 
- * t: O grau da árvore
+ * t: A ordem da árvore
  * arvoreB: Um ponteiro no qual a árvore será alocada
  * 
  * Retorna um bool indicando se a operação teve sucesso
