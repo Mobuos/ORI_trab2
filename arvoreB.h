@@ -18,13 +18,39 @@ typedef struct{
     Node* raiz;
 } ArvoreB;
 
-// Cria um nó inicial vazio
+/*
+ * criaArvore()
+ * Cria uma nova árvore B com um nó inicial vazio
+ * 
+ * t: O grau da árvore
+ * arvoreB: Um ponteiro no qual a árvore será alocada
+ * 
+ * Retorna um bool indicando se a operação teve sucesso
+ */
 bool criaArvore(int t, ArvoreB* arvoreB);
 
-// Busca na árvore pela chave, retorna o índice dela e o nó
-int buscaArvore(int chave, Node* nodeEncontrado);
+/*
+ * buscaArvore()
+ * Busca na árvore pela chave
+ * 
+ * arvoreB: O nó raiz da árvore onde será efetuada a busca
+ * chave: Chave a ser procurada
+ * nodeEncontrado: Ponteiro para o nó encontrado
+ * 
+ * Retorna o índice da chave encontrada, ou -1 caso tenha falhado
+*/
+int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado);
 
-// Insere na árvore a chave, retorna o índice dela e o nó
-int insereArvore(int chave, Node* nodeInserido);
+/*
+ * insereArvore()
+ * Insere na árvore
+ * 
+ * arvoreB: O nó raiz da árvore onde será efetuada a inserção
+ * chave: Chave a ser inserida
+ * nodeEncontrado: Ponteiro para o nó inserido
+ * 
+ * Retorna o índice da chave inserida, ou -1 caso tenha falhado
+*/
+int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido);
 
 #endif
