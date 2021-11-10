@@ -3,59 +3,68 @@
 #include "testes.h"
 #include "interface.h"
 
-#define BUFFSIZE 128
+// Lê um inteiro do arquivo
+int lerProxInteiro(FILE *in){
+    int i;
+    char buffer[BUFFSIZE];
+    if(fgets(buffer, BUFFSIZE, in)){
+        // Nota: atoi não é a melhor função do mundo para isso, mas assumo que não terão erros de input nos casos teste.
+        i = atoi(buffer);
+        return i;
+    }else{
+        printf("Erro na leitura... Finalizando. \n");
+        exit(1);
+    }
+}
 
 //TODO Verificações aqui
 
 // Retorna a ordem (t) requisitada
 int autoInOrdem(FILE *in){
     printf("testes: Lendo ordem do arquivo...\n");
-
-    char buffer[BUFFSIZE];
+    
     int t = -1;
-    if(fgets(buffer, BUFFSIZE, in)){
-        // Nota: atoi não é a melhor função do mundo para isso, mas assumo que não terão erros de input nos casos teste.
-        t = atoi(buffer);
-    }else{
-        printf("Erro na leitura... Finalizando. \n");
-        exit(1);
-    }
+    t = lerProxInteiro(in);
 
     printf("testes: ordem = %d\n", t);
     return t;
 }
 
 // Retorna a operação requisitada
-enum Operacao autoInOperacao(FILE *in){
+struct Operacao autoInOperacao(FILE *in){
     printf("testes: Lendo operacao...\n");
+    int opCode = 0;
+    int param = -1;
+    struct Operacao op;
 
-    char buffer[BUFFSIZE];
-    int op = 0;
-    
-    if(fgets(buffer, BUFFSIZE, in)){
-        op = atoi(buffer);
-    }else{
-        printf("Erro na leitura... Finalizando. \n");
-        exit(1);
-    }
+    opCode = lerProxInteiro(in);
 
-    switch (op)
+    switch (opCode)
     {
     case 1:
-        printf("testes: Operacao busca (%d)\n", op);
-        return Busca;
+        // Busca
+        printf("testes: Operacao busca (%d)\n", opCode);
+        param = lerProxInteiro(in);
+        op.tipo = Busca;
+        op.param = param;
         break;
     case 2:
-         printf("testes: Operacao insercao (%d)\n", op);
-        return Insercao;
+        // Inserção
+        printf("testes: Operacao insercao (%d)\n", opCode);
+        param = lerProxInteiro(in);
+        op.tipo = Insercao;
+        op.param = param;
         break;
     case 3:
-        printf("testes: Operacao finalizar (%d)\n", op);
-        return Finalizar;
+        // Finalizar
+        printf("testes: Operacao finalizar (%d)\n", opCode);
+        op.tipo = Finalizar;
         break;
     default:
-        printf("testes: Valor inválido (%d), finalizando\n", op);
-        return Finalizar;
+        // Padrão
+        printf("testes: Valor inválido (%d), finalizando\n", opCode);
+        op.tipo = Finalizar;
         break;
     }
+    return op;
 }

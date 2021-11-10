@@ -1,6 +1,6 @@
 # Trabalho de ORI 2
 
-![Diagrama da estrutura](https://i.imgur.com/LcVts0o.png)
+![Diagrama da estrutura](https://i.imgur.com/Kek4qiB.png)
 
 - Implementar uma árvore-B em _memória principal_
 - Após criar a árvore, o programa deve ser capaz de realizar as operações de 

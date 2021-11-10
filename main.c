@@ -33,20 +33,20 @@ int main(int argc, char *argv[])
     printf("main: Criar arvore de ordem %d\n", t); //Debug
     
     // Loop principal de operações sobre a árvore B
-    int op;
+    struct Operacao op = {Finalizar, -1};
     do{
         if(teste){
             op = autoInOperacao(inFile);
         }else{
             op = inputOperacao();
         }
-        switch (op)
+        switch (op.tipo)
         {
         case Insercao:
-            printf("main: Insercao\n");
+            printf("main: Insercao de %d\n", op.param);
             break;
         case Busca:
-            printf("main: Busca\n");
+            printf("main: Busca de %d\n", op.param);
             break;
         case Finalizar:
             printf("main: Finalizando...\n");
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
             return 1;
             break;
         }
-    }while(op != Finalizar);
+    }while(op.tipo != Finalizar);
 
     // Fecha o arquivo de testes caso necessário
     if(teste){

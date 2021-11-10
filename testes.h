@@ -2,6 +2,7 @@
 #define TESTES_H
 
 #include "interface.h" //enum
+#define BUFFSIZE 128
 
 /*
  * autoInOrdem()
@@ -9,7 +10,7 @@
  * 
  * Retorna a ordem especificada no arquivo de testes
  */
-int autoInOrdem();
+int autoInOrdem(FILE *in);
 
 /*
  * autoInOperacao()
@@ -17,6 +18,16 @@ int autoInOrdem();
  *
  * Retorna a operação especificada no arquivo de testes
  */
-enum Operacao autoInOperacao();
+struct Operacao autoInOperacao(FILE *in);
+
+/*
+ * lerProxInteiro()
+ * Lê o primeiro inteiro da próxima linha de um arquivo
+ * 
+ * in: Arquivo de onde será lido o inteiro
+ * 
+ * Retorna o inteiro lido do arquivo
+ */
+int lerProxInteiro(FILE *in);
 
 #endif

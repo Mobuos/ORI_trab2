@@ -1,8 +1,14 @@
 20 # Comentários são possíveis
-1  # Inserção
-2  # Busca
-1  # Inserção
-1  # Inserção
-1  # Inserção
-2  # Busca
+1  # Inserção de 10
+10
+2  # Busca de 10
+10
+1  # Inserção de 20
+20
+1  # Inserção de 25
+25
+1  # Inserção de 30
+30
+2  # Busca de 25
+25
 3  # Finalizar

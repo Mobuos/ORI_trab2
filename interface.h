@@ -2,7 +2,13 @@
 #define INTERFACE_H
 
 // Enum utilizado para representar as operações
-enum Operacao {Busca, Insercao, Finalizar};
+enum TipoOperacao {Busca, Insercao, Finalizar};
+
+// Struct de retorno para input de operações, inclue o tipo e um parâmetro
+struct Operacao{
+    enum TipoOperacao tipo;
+    int param;
+};
 
 /*
  * inputOrdem()
@@ -19,6 +25,6 @@ int inputOrdem();
  * Retorna a operação requisitada pelo usuário, correspondendo
  *  a um enum.
  */
-enum Operacao inputOperacao();
+struct Operacao inputOperacao();
 
 #endif
