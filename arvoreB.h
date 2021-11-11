@@ -5,11 +5,10 @@
 
 // Nó da árvore B
 typedef struct node{
-    int n;           // Número de chaves
-    bool folha;      // Indica se o nó é folha
-    int* *chaves;  // Ponteiro de array de chaves
+    int n;                 // Número de chaves
+    bool folha;            // Indica se o nó é folha
+    int* *chaves;          // Ponteiro de array de chaves
     struct node** *pNodes; // Pointeiro de array de ponteiros para os nós
-    //NOTA: Não sei se isso funciona, to testando em um código separado
 } Node;
 
 // Struct principal da árvore B
@@ -17,6 +16,18 @@ typedef struct{
     int t;
     Node* raiz;
 } ArvoreB;
+
+// Aloca um nó de acordo com a ordem da árvore
+/*
+ * alocaNode()
+ * Aloca um nó de acordo com a ordem da árvore
+ * 
+ * t: A ordem da árvore
+ * n: O número de chaves
+ * 
+ * Retorna um ponteiro para o struct de nó alocado
+ */
+Node *alocaNode(int t, int n);
 
 /*
  * criaArvore()
