@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "testes.h"
 #include "interface.h"
 
@@ -37,34 +38,53 @@ struct Operacao autoInOperacao(FILE *in){
     int param = -1;
     struct Operacao op;
 
-    opCode = lerProxInteiro(in);
+    bool continuar = false;
+    char buffer[BUFFSIZE];
 
-    switch (opCode)
-    {
-    case 1:
-        // Busca
-        printf("> Operacao busca (%d)\n", opCode);
-        param = lerProxInteiro(in);
-        op.tipo = Busca;
-        op.param = param;
-        break;
-    case 2:
-        // Inserção
-        printf("> Operacao insercao (%d)\n", opCode);
-        param = lerProxInteiro(in);
-        op.tipo = Insercao;
-        op.param = param;
-        break;
-    case 3:
-        // Finalizar
-        printf("> Operacao finalizar (%d)\n", opCode);
-        op.tipo = Finalizar;
-        break;
-    default:
-        // Padrão
-        printf("> Valor inválido (%d), finalizando\n", opCode);
-        op.tipo = Finalizar;
-        break;
-    }
+    // Loop para possibilitar a impressão na tela sem retornar uma operação
+    do{
+        continuar = false;
+
+        opCode = lerProxInteiro(in);
+        switch (opCode)
+        {
+        case 1:
+            // Busca
+            param = lerProxInteiro(in);
+            printf("> Operacao busca (%d)\n", param);
+            op.tipo = Busca;
+            op.param = param;
+            break;
+        case 2:
+            // Inserção
+            param = lerProxInteiro(in);
+            printf("> Operacao insercao (%d)\n", param);
+            op.tipo = Insercao;
+            op.param = param;
+            break;
+        case 3:
+            // Finalizar
+            printf("> Operacao finalizar\n");
+            op.tipo = Finalizar;
+            break;
+        case 9:
+            // Print Auxiliar para visualização dos testes
+            printf("> Operacao Print\n");
+            if(fgets(buffer, BUFFSIZE, in)){
+                printf("\n==== %s\n", buffer);
+            }else{
+                printf("Erro na leitura... Finalizando. \n");
+                exit(1);
+            }
+            continuar = true;
+            break;
+        default:
+            // Padrão
+            printf("> Valor inválido (%d), finalizando\n", opCode);
+            op.tipo = Finalizar;
+            break;
+        }
+    }while(continuar);
+    
     return op;
 }

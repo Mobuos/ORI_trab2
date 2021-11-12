@@ -1,0 +1,56 @@
+4 # Ordem
+9 # PRINT AUXILIAR
+Iniciando Insercoes:
+2 # Inserção 2
+2
+2 # Inserção 6
+6
+2 # Inserção 8
+8
+2 # Inserção 8 (Repetido)
+8
+2 # Inserção 10
+10
+2 # Inserção 1
+1
+2 # Inserção 30
+30
+2 # Inserção 15
+15
+2 # Inserção 2 (Repetido)
+2
+2 # Inserção 23
+23
+2 # Inserção 18
+18
+2 # Inserção 29
+29
+2 # Inserção 5
+5
+2 # Inserção 0
+0
+9 # PRINT AUXILIAR
+Iniciando Buscas (Esperando encontrar):
+1 # Busca 0 (✔)
+0
+1 # Busca 8 (✔)
+8
+1 # Busca 30 (✔)
+30
+1 # Busca 23 (✔)
+23
+1 # Busca 5 (✔)
+5
+9 # PRINT AUXILIAR
+Iniciando Buscas (Esperando NÃO encontrar):
+1 # Busca 50 (✖)
+50
+1 # Busca 9 (✖)
+9
+1 # Busca 11 (✖)
+11
+1 # Busca 12 (✖)
+12
+1 # Busca 128398193 (✖)
+128398193
+3 # Finalizar
