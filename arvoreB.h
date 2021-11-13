@@ -35,11 +35,11 @@ Node *alocaNode(int t, int n);
  * Cria uma nova árvore B com um nó inicial vazio
  * 
  * t: A ordem da árvore
- * arvoreB: Um ponteiro no qual a árvore será alocada
+ * arvoreB: Referência do ponteiro a ser alocado (ArvoreB)
  * 
  * Retorna um bool indicando se a operação teve sucesso
  */
-bool criaArvore(int t, ArvoreB* arvoreB);
+bool criaArvore(int t, ArvoreB* *arvoreB);
 
 /*
  * buscaArvore()

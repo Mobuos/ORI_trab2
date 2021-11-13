@@ -3,7 +3,7 @@
 
 // Aloca um nó de acordo com a ordem da árvore
 Node *alocaNode(int t, int n){
-    Node* node = malloc(sizeof(Node*));
+    Node* node = (Node*) malloc(sizeof(Node));
     node->n = n;
     node->folha = true;
     // Aloca um vetor com a quantidade máxima de chaves que um nó pode ter
@@ -11,7 +11,7 @@ Node *alocaNode(int t, int n){
     for(int i = 0; i < 2*t-1; i++)
         node->chaves[i] = -1;
     // Aloca um vetor com a quantidade máxima de filhos que um nó pode ter
-    node->pNodes = (Node**) malloc(sizeof(Node) * (2*t));
+    node->pNodes = (Node**) malloc(sizeof(Node*) * (2*t));
     for(int i = 0; i < 2*t; i++)
         node->pNodes[i] = NULL;
 
@@ -19,16 +19,16 @@ Node *alocaNode(int t, int n){
 }
 
 // Cria um nó inicial vazio
-bool criaArvore(int t, ArvoreB* arvoreB){
+bool criaArvore(int t, ArvoreB* *arvoreB){
     // Verifica se a árvore já foi criada (Se existe nó raiz e se t já está definido)
-    if(arvoreB != NULL){
+    if(*arvoreB != NULL){
         return false;
     }
 
     // Cria um nó vazio, coloca o valor de t e raiz no struct
-    arvoreB = malloc(sizeof(ArvoreB*));
-    arvoreB->t = t;
-    arvoreB->raiz = alocaNode(t,0);
+    *arvoreB = (ArvoreB*) malloc(sizeof(ArvoreB));
+    (*arvoreB)->t = t;
+    (*arvoreB)->raiz = alocaNode(t,0);
     return true;
 }
 

@@ -31,9 +31,12 @@ int main(int argc, char *argv[])
     }
 
     //TODO: Criar árvore de ordem t
-    ArvoreB* pRaizAB = NULL;
+    ArvoreB* pAB = NULL;
     //printf("main: Criar arvore de ordem %d\n", t);
-    criaArvore(t, pRaizAB);
+    if(!criaArvore(t, &pAB)){
+        printf("Erro: Falha ao criar a árvore\n");
+        exit(1);
+    }
     
     // Loop principal de operações sobre a árvore B
     struct Operacao op = {Finalizar, -1};
@@ -49,12 +52,12 @@ int main(int argc, char *argv[])
         {
         case Insercao:
             //printf("main: Insercao de %d\n", op.param);
-            indice = insereArvore(pRaizAB, op.param, pNodeAtual);
+            indice = insereArvore(pAB, op.param, pNodeAtual);
             indice != -1 ? printf("Indice: %d\n", indice) : printf("Erro: Insercao falhou\n");
             break;
         case Busca:
             //printf("main: Busca de %d\n", op.param);
-            indice = buscaArvore(pRaizAB, op.param, pNodeAtual);
+            indice = buscaArvore(pAB, op.param, pNodeAtual);
             indice != -1 ? printf("Indice: %d\n", indice) : printf("CHAVE NAO ENCONTRADA!\n");
             break;
         case Finalizar:
