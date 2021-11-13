@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
         {
         case Insercao:
             //printf("main: Insercao de %d\n", op.param);
-            indice = insereArvore(pRaizAB, op.param, pNodeAtual);
+            indice = insereArvore(pRaizAB->raiz, op.param, pRaizAB->t, pNodeAtual);
             indice != -1 ? printf("Indice: %d\n", indice) : printf("Erro: Insercao falhou\n");
             break;
         case Busca:
