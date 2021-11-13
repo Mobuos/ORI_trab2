@@ -50,9 +50,9 @@ int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido){
         aux->pNodes[0] = r;
 
         divideFilho(aux, 1, arvoreB->t);
-        insere(aux, chave, arvoreB->t);
+       return insere(aux, chave, arvoreB->t);
     }else{
-        insere(r, chave, arvoreB->t);
+       return insere(r, chave, arvoreB->t);
     }
     
     return -1;
@@ -88,7 +88,7 @@ void divideFilho(Node* no, int i, int t){
 }
 
 //insere numa arvore b nao cheia
-void insere(Node* r, int chave, int t){
+int insere(Node* r, int chave, int t){
     int i = r->n;
 
     if(r->folha){
@@ -98,6 +98,7 @@ void insere(Node* r, int chave, int t){
         }
         r->chaves[i + 1] = chave;
         r->n = r->n + 1;
+        return i + 1;
     }
 
     else{
@@ -109,6 +110,6 @@ void insere(Node* r, int chave, int t){
             if(chave > r->chaves[i])
                 i++;
         }
-        insere(r->pNodes[i], chave);
+       return insere(r->pNodes[i], chave, t);
     }
 }

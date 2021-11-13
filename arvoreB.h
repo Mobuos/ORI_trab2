@@ -67,9 +67,27 @@ int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado);
 */
 int insereArvore(Node* r, int chave, int t, Node* nodeInserido);
 
-/**/
-void insere(Node* r, int i, int t);
-/**/
+/*
+* insere()
+* Insere na arvoreB nao cheia
+*
+* r: o no raiz da arvore/subarvore
+* i: indice
+* t: a ordem da arvoreB
+* 
+* Retorna o indice da chave inserida
+*/
+int insere(Node* r, int i, int t);
+
+/*
+* divideFilho()
+* divide um no caso ele esteja cheio
+*
+* r: o no a ser divido
+* i: indice 
+* t: ordem da arvoreB
+
+*/
 void divideFilho(Node* r, int i, int t);
 
 #endif
