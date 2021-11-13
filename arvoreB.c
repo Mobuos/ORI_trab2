@@ -98,7 +98,8 @@ int insere(Node* r, int chave, int t){
         }
         r->chaves[i + 1] = chave;
         r->n = r->n + 1;
-        return i + 1;
+        //return i + 1;
+        return i;
     }else{
         while(i >= 1 && chave < r->chaves[i])
             i--;
