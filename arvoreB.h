@@ -8,9 +8,9 @@ typedef struct node{
     int n;                 // Número de chaves
     bool folha;            // Indica se o nó é folha
     //int* *chaves;
-    int* chaves;          // Ponteiro de array de chaves
+    int* chaves;          // Ponteiro / array de chaves
     //struct node** *pNodes;
-    struct node* *pNodes; // Pointeiro de array de ponteiros para os nós
+    struct node* *pNodes; // Pointeiro / array de ponteiros para os nós
 } Node;
 
 // Struct principal da árvore B
@@ -19,7 +19,6 @@ typedef struct{
     Node* raiz;
 } ArvoreB;
 
-// Aloca um nó de acordo com a ordem da árvore
 /*
  * alocaNode()
  * Aloca um nó de acordo com a ordem da árvore
@@ -58,36 +57,34 @@ int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado);
  * insereArvore()
  * Insere na árvore
  * 
- * r: O nó raiz da árvore onde será efetuada a inserção
- * t: a ordem da arvoreB
+ * arvoreB: A árvore onde será inserido o nó
  * chave: Chave a ser inserida
  * nodeEncontrado: Ponteiro para o nó inserido
  * 
  * Retorna o índice da chave inserida, ou -1 caso tenha falhado
-*/
-int insereArvore(Node* r, int chave, int t, Node* nodeInserido);
+ */
+int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido);
 
 /*
-* insere()
-* Insere na arvoreB nao cheia
-*
-* r: o no raiz da arvore/subarvore
-* i: indice
-* t: a ordem da arvoreB
-* 
-* Retorna o indice da chave inserida
-*/
+ * insere()
+ * Insere na arvoreB nao cheia
+ *
+ * r: o no raiz da arvore/subarvore
+ * i: indice
+ * t: a ordem da arvoreB
+ * 
+ * Retorna o indice da chave inserida
+ */
 int insere(Node* r, int i, int t);
 
 /*
-* divideFilho()
-* divide um no caso ele esteja cheio
-*
-* r: o no a ser divido
-* i: indice 
-* t: ordem da arvoreB
-
-*/
+ * divideFilho()
+ * divide um no caso ele esteja cheio
+ *
+ * r: o no a ser divido
+ * i: indice 
+ * t: ordem da arvoreB
+ */
 void divideFilho(Node* r, int i, int t);
 
 #endif

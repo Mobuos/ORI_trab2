@@ -9,7 +9,7 @@ Node *alocaNode(int t, int n){
     // Aloca um vetor com a quantidade máxima de chaves que um nó pode ter
     node->chaves = (int*) malloc(sizeof(int) * (2*t-1));
     for(int i = 0; i < 2*t-1; i++)
-        node->chaves[i] = NULL;
+        node->chaves[i] = -1;
     // Aloca um vetor com a quantidade máxima de filhos que um nó pode ter
     node->pNodes = (Node**) malloc(sizeof(Node) * (2*t));
     for(int i = 0; i < 2*t; i++)
