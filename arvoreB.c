@@ -39,15 +39,16 @@ int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado){
 
 // Insere na árvore a chave, retorna o índice dela e o nó
 int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido){
-    Node* r = arvoreB->raiz;
     if(arvoreB == NULL) 
         return -1;
+    Node* r = arvoreB->raiz;
 
+    // Árvore está cheia?
     if(r->n == 2 * arvoreB->t - 1){
         Node* aux = alocaNode(arvoreB->t, 0);
         arvoreB->raiz = aux;
         aux->folha = false;
-        aux->pNodes[0] = r;
+        aux->pNodes[1] = r;
 
         divideFilho(aux, 1, arvoreB->t);
        return insere(aux, chave, arvoreB->t);
@@ -58,7 +59,7 @@ int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido){
     return -1;
 }
 
-// Divide o no filho 
+// Divide o nó filho 
 void divideFilho(Node* no, int i, int t){
     Node* z = alocaNode(t, 0);
     Node* y = no->pNodes[i];
@@ -87,7 +88,7 @@ void divideFilho(Node* no, int i, int t){
     no->n = no->n + 1;
 }
 
-//insere numa arvore b nao cheia
+// Insere um nó em uma árvore B não-cheia.
 int insere(Node* r, int chave, int t){
     int i = r->n;
 

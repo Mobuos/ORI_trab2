@@ -7,9 +7,7 @@
 typedef struct node{
     int n;                 // Número de chaves
     bool folha;            // Indica se o nó é folha
-    //int* *chaves;
     int* chaves;          // Ponteiro / array de chaves
-    //struct node** *pNodes;
     struct node* *pNodes; // Pointeiro / array de ponteiros para os nós
 } Node;
 
