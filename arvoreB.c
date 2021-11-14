@@ -90,7 +90,7 @@ void divideFilho(Node* no, int i, int t){
 
 // Insere um nó em uma árvore B não-cheia.
 int insere(Node* r, int chave, int t){
-    int i = r->n;
+    int i = r->n - 1;
 
     if(r->folha){
         while(i >= 1 && chave < r->chaves[i]){
@@ -99,8 +99,8 @@ int insere(Node* r, int chave, int t){
         }
         r->chaves[i + 1] = chave;
         r->n = r->n + 1;
-        //return i + 1;
-        return i;
+        return i + 1;
+        //return i;
     }else{
         while(i >= 1 && chave < r->chaves[i])
             i--;
