@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
             break;
         case Busca:
             //printf("main: Busca de %d\n", op.param);
-            indice = buscaArvore(pAB, op.param, pNodeAtual);
+            indice = buscaArvore(pAB->raiz, op.param, pNodeAtual);
             indice != -1 ? printf("Indice: %d\n", indice) : printf("CHAVE NAO ENCONTRADA!\n");
             break;
         case Finalizar:
