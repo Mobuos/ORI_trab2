@@ -33,8 +33,20 @@ bool criaArvore(int t, ArvoreB* *arvoreB){
 }
 
 // Busca a árvore pelo nó, retorna o indíce e o nó encontrado por referência
-int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado){
-    return -1;
+int buscaArvore(Node* no, int chave, Node* nodeEncontrado){
+    int i = 0;
+
+    while(i < no->n && chave > no->chaves[i]){
+        i++;
+    }
+    
+    if(i < no->n && no->chaves[i] == chave){
+        nodeEncontrado = no;
+        return i;
+    }else if(no->folha){
+        return -1;
+    }
+    return buscaArvore(no->pNodes[i], chave, nodeEncontrado);
 }
 
 // Insere na árvore a chave, retorna o índice dela e o nó
