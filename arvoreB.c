@@ -33,8 +33,20 @@ bool criaArvore(int t, ArvoreB* *arvoreB){
 }
 
 // Busca a árvore pelo nó, retorna o indíce e o nó encontrado por referência
-int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado){
-    return -1;
+int buscaArvore(Node* no, int chave, Node* nodeEncontrado){
+    int i = 0;
+
+    while(i < no->n && chave > no->chaves[i]){
+        i++;
+    }
+    
+    if(i < no->n && no->chaves[i] == chave){
+        nodeEncontrado = no;
+        return i;
+    }else if(no->folha){
+        return -1;
+    }
+    return buscaArvore(no->pNodes[i], chave, nodeEncontrado);
 }
 
 // Insere na árvore a chave, retorna o índice dela e o nó
@@ -48,9 +60,9 @@ int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido){
         Node* aux = alocaNode(arvoreB->t, 0);
         arvoreB->raiz = aux;
         aux->folha = false;
-        aux->pNodes[1] = r;
+        aux->pNodes[0] = r;
 
-        divideFilho(aux, 1, arvoreB->t);
+        divideFilho(aux, 0, arvoreB->t);
        return insere(aux, chave, arvoreB->t);
     }else{
        return insere(r, chave, arvoreB->t);
@@ -66,9 +78,10 @@ void divideFilho(Node* no, int i, int t){
     z->folha = y->folha;
     z->n = t - 1;
 
-    for(int j = 0; j < t-1; j++)
+    for(int j = 0; j < t-1; j++) 
         z->chaves[j] = y->chaves[j + t];
 
+    //em caso de problema, analisar divisoes de nodes nao folha
     if(!y->folha){
         for (int j = 0; j < t; j++)
             z->pNodes[j] = y->pNodes[j + t];
@@ -76,15 +89,17 @@ void divideFilho(Node* no, int i, int t){
 
     y->n = t - 1;
 
-    for(int j = no->n + 1; j < i + 1; j++)
+    //movendo os ponteiros de nodes
+    for(int j = no->n; j < i + 1; j++)
         no->pNodes[j + 1] = no->pNodes[j];
     
-    no->pNodes[i + 1] = z;
+    no->pNodes[i + 1] = z; 
 
-    for(int j = no->n; j < i; j++)
+    //movendo outras chaves
+    for(int j = no->n - 1; j < i; j++)
         no->chaves[j + 1] = no->chaves[j]; 
     
-    no->chaves[i] = y->chaves[t];
+    no->chaves[i] = y->chaves[t - 1];
     no->n = no->n + 1;
 }
 
@@ -93,16 +108,15 @@ int insere(Node* r, int chave, int t){
     int i = r->n - 1;
 
     if(r->folha){
-        while(i >= 1 && chave < r->chaves[i]){
+        while(i >= 0 && chave < r->chaves[i]){
             r->chaves[i + 1] = r->chaves[i];
             i--; 
         }
         r->chaves[i + 1] = chave;
         r->n = r->n + 1;
         return i + 1;
-        //return i;
     }else{
-        while(i >= 1 && chave < r->chaves[i])
+        while(i >= 0 && chave < r->chaves[i])
             i--;
         i++;
         if(r->pNodes[i]->n == 2*t - 1){

@@ -49,7 +49,7 @@ bool criaArvore(int t, ArvoreB* *arvoreB);
  * 
  * Retorna o índice da chave encontrada, ou -1 caso tenha falhado
 */
-int buscaArvore(ArvoreB* arvoreB, int chave, Node* nodeEncontrado);
+int buscaArvore(Node* no, int chave, Node* nodeEncontrado);
 
 /*
  * insereArvore()
