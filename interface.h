@@ -6,12 +6,18 @@
 #include <stdlib.h>
 
 // Enum utilizado para representar as operações
-enum TipoOperacao {Busca, Insercao, Finalizar};
+enum TipoOperacao
+{
+    Busca,
+    Insercao,
+    Finalizar
+};
 
 // Struct de retorno para input de operações, inclue o tipo e um parâmetro
-struct Operacao{
+struct Operacao
+{
     enum TipoOperacao tipo; // Tipo da operação
-    int param; // A chave na qual executar a operação
+    int param;              // A chave na qual executar a operação
 };
 
 /*

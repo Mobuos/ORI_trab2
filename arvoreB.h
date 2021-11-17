@@ -4,17 +4,19 @@
 #include <stdbool.h>
 
 // Nó da árvore B
-typedef struct node{
-    int n;                 // Número de chaves
-    bool folha;            // Indica se o nó é folha
-    int* chaves;          // Ponteiro / array de chaves
-    struct node* *pNodes; // Pointeiro / array de ponteiros para os nós
+typedef struct node
+{
+    int n;                // Número de chaves
+    bool folha;           // Indica se o nó é folha
+    int *chaves;          // Ponteiro / array de chaves
+    struct node **pNodes; // Pointeiro / array de ponteiros para os nós
 } Node;
 
 // Struct principal da árvore B
-typedef struct{
+typedef struct
+{
     int t;
-    Node* raiz;
+    Node *raiz;
 } ArvoreB;
 
 /*
@@ -37,7 +39,7 @@ Node *alocaNode(int t, int n);
  * 
  * Retorna um bool indicando se a operação teve sucesso
  */
-bool criaArvore(int t, ArvoreB* *arvoreB);
+bool criaArvore(int t, ArvoreB **arvoreB);
 
 /*
  * buscaArvore()
@@ -49,7 +51,7 @@ bool criaArvore(int t, ArvoreB* *arvoreB);
  * 
  * Retorna o índice da chave encontrada, ou -1 caso tenha falhado
 */
-int buscaArvore(Node* no, int chave, Node* nodeEncontrado);
+int buscaArvore(Node *no, int chave, Node *nodeEncontrado);
 
 /*
  * insereArvore()
@@ -61,7 +63,7 @@ int buscaArvore(Node* no, int chave, Node* nodeEncontrado);
  * 
  * Retorna o índice da chave inserida, ou -1 caso tenha falhado
  */
-int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido);
+int insereArvore(ArvoreB *arvoreB, int chave, Node *nodeInserido);
 
 /*
  * insere()
@@ -73,7 +75,7 @@ int insereArvore(ArvoreB* arvoreB, int chave, Node* nodeInserido);
  * 
  * Retorna o indice da chave inserida
  */
-int insere(Node* r, int i, int t);
+int insere(Node *r, int i, int t);
 
 /*
  * divideFilho()
@@ -83,6 +85,6 @@ int insere(Node* r, int i, int t);
  * i: indice 
  * t: ordem da arvoreB
  */
-void divideFilho(Node* r, int i, int t);
+void divideFilho(Node *r, int i, int t);
 
 #endif

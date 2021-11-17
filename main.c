@@ -11,12 +11,14 @@ int main(int argc, char *argv[])
     bool teste;
     teste = false;
     FILE *inFile;
-    if(argc == 2){
+    if (argc == 2)
+    {
         teste = true;
-        
+
         // Abre arquivo
         inFile = fopen(argv[1], "r");
-        if(inFile == NULL){
+        if (inFile == NULL)
+        {
             printf("Erro: Falha na abertura do arquivo\n");
             exit(1);
         }
@@ -24,28 +26,36 @@ int main(int argc, char *argv[])
 
     // Recebe a variável t (Seja do usuário ou do arquivo de testes)
     int t;
-    if(teste){
+    if (teste)
+    {
         t = autoInOrdem(inFile);
-    }else{
+    }
+    else
+    {
         t = inputOrdem(inFile);
     }
 
     //TODO: Criar árvore de ordem t
-    ArvoreB* pAB = NULL;
+    ArvoreB *pAB = NULL;
     //printf("main: Criar arvore de ordem %d\n", t);
-    if(!criaArvore(t, &pAB)){
+    if (!criaArvore(t, &pAB))
+    {
         printf("Erro: Falha ao criar a árvore\n");
         exit(1);
     }
-    
+
     // Loop principal de operações sobre a árvore B
     struct Operacao op = {Finalizar, -1};
-    Node* pNodeAtual = NULL;
+    Node *pNodeAtual = NULL;
     int indice;
-    do{
-        if(teste){
+    do
+    {
+        if (teste)
+        {
             op = autoInOperacao(inFile);
-        }else{
+        }
+        else
+        {
             op = inputOperacao();
         }
         switch (op.tipo)
@@ -68,10 +78,11 @@ int main(int argc, char *argv[])
             return 1;
             break;
         }
-    }while(op.tipo != Finalizar);
+    } while (op.tipo != Finalizar);
 
     // Fecha o arquivo de testes caso necessário
-    if(teste){
+    if (teste)
+    {
         fclose(inFile);
     }
 

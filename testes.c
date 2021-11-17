@@ -5,14 +5,18 @@
 #include "interface.h"
 
 // Lê um inteiro do arquivo
-int lerProxInteiro(FILE *in){
+int lerProxInteiro(FILE *in)
+{
     int i;
     char buffer[BUFFSIZE];
-    if(fgets(buffer, BUFFSIZE, in)){
+    if (fgets(buffer, BUFFSIZE, in))
+    {
         // Nota: atoi não é a melhor função do mundo para isso, mas assumo que não terão erros de input nos casos teste.
         i = atoi(buffer);
         return i;
-    }else{
+    }
+    else
+    {
         printf("Erro na leitura... Finalizando. \n");
         exit(1);
     }
@@ -21,9 +25,10 @@ int lerProxInteiro(FILE *in){
 //TODO Verificações aqui
 
 // Retorna a ordem (t) requisitada
-int autoInOrdem(FILE *in){
+int autoInOrdem(FILE *in)
+{
     printf("> Lendo ordem do arquivo...\n");
-    
+
     int t = -1;
     t = lerProxInteiro(in);
 
@@ -32,7 +37,8 @@ int autoInOrdem(FILE *in){
 }
 
 // Retorna a operação requisitada
-struct Operacao autoInOperacao(FILE *in){
+struct Operacao autoInOperacao(FILE *in)
+{
     printf("> Lendo operacao...\n");
     int opCode = 0;
     int param = -1;
@@ -42,7 +48,8 @@ struct Operacao autoInOperacao(FILE *in){
     char buffer[BUFFSIZE];
 
     // Loop para possibilitar a impressão na tela sem retornar uma operação
-    do{
+    do
+    {
         continuar = false;
 
         opCode = lerProxInteiro(in);
@@ -70,9 +77,12 @@ struct Operacao autoInOperacao(FILE *in){
         case 9:
             // Print Auxiliar para visualização dos testes
             printf("> Operacao Print\n");
-            if(fgets(buffer, BUFFSIZE, in)){
+            if (fgets(buffer, BUFFSIZE, in))
+            {
                 printf("\n==== %s\n", buffer);
-            }else{
+            }
+            else
+            {
                 printf("Erro na leitura... Finalizando. \n");
                 exit(1);
             }
@@ -84,7 +94,7 @@ struct Operacao autoInOperacao(FILE *in){
             op.tipo = Finalizar;
             break;
         }
-    }while(continuar);
-    
+    } while (continuar);
+
     return op;
 }

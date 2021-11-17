@@ -51,13 +51,16 @@ int lerNatural(char msgErro[])
         }
         else
         {
-            if(valor >= 0){
+            if (valor >= 0)
+            {
                 sucesso = 1;
-            }else{
+            }
+            else
+            {
                 sucesso = 0;
             }
         }
-    } while (!sucesso); // repeat until we got a valid number
+    } while (!sucesso); // Repetir até obter um número apropriado
 
     return valor;
 }
@@ -65,7 +68,6 @@ int lerNatural(char msgErro[])
 // Retorna a ordem (t) requisitada
 int inputOrdem()
 {
-    //TODO Verificações aqui, deixar mais bunitu
     //int t = 0;
     printf("Ordem: ");
     //scanf("%d", &t);
@@ -76,13 +78,13 @@ int inputOrdem()
 /// Retorna um struct da operação requisitada
 struct Operacao inputOperacao()
 {
-    //TODO Verificações aqui, deixar mais bunitu
     int opCode = 0;
     int param = -1;
     struct Operacao op;
 
     int sucesso;
-    do{
+    do
+    {
         sucesso = 1;
         printf("=== Digite a operação requisitada ===\n (1) - Busca\n (2) - Insercao\n (3) - Sair\n");
         opCode = lerNatural("Número inválido, tente novamente: ");
@@ -113,7 +115,7 @@ struct Operacao inputOperacao()
             sucesso = 0;
             break;
         }
-    }while(!sucesso);
-    
+    } while (!sucesso);
+
     return op;
 }
