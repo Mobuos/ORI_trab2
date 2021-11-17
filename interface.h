@@ -1,5 +1,9 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // Enum utilizado para representar as operações
 enum TipoOperacao {Busca, Insercao, Finalizar};
@@ -9,6 +13,18 @@ struct Operacao{
     enum TipoOperacao tipo; // Tipo da operação
     int param; // A chave na qual executar a operação
 };
+
+/*
+ * lerNatural()
+ * Lê um número positivo e inteiro (Natural) da entrada padrão
+ * 
+ * msgErro: Mensagem apresentada ao usuário caso a entrada não seja válida
+ * - Exemplo: "Entrada inválida, tente novamente"
+ * 
+ * Retorna o número lido.
+ * (Fonte: http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
+ */
+int lerNatural(char msgErro[]);
 
 /*
  * inputOrdem()
