@@ -4,19 +4,6 @@
 #include "testes.h"
 #include "interface.h"
 
-
-//Regular text
-#define BLK "\e[0;30m"
-#define RED "\e[0;31m"
-#define GRN "\e[0;32m"
-#define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
-#define MAG "\e[0;35m"
-#define CYN "\e[0;36m"
-#define WHT "\e[0;37m"
-//Reset
-#define reset "\e[0m"
-
 // Lê um inteiro do arquivo
 int lerProxInteiro(FILE *in)
 {
@@ -69,25 +56,25 @@ struct Operacao autoInOperacao(FILE *in)
         case 1:
             // Busca
             param = lerProxInteiro(in);
-            printf(CYN "> Operacao busca (%d)\n" reset, param);
+            printf("> Operacao busca (%d)\n", param);
             op.tipo = Busca;
             op.param = param;
             break;
         case 2:
             // Inserção
             param = lerProxInteiro(in);
-            printf(CYN "> Operacao insercao (%d)\n" reset, param);
+            printf("> Operacao insercao (%d)\n", param);
             op.tipo = Insercao;
             op.param = param;
             break;
         case 3:
             // Finalizar
-            printf(CYN "> Operacao finalizar\n" reset);
+            printf("> Operacao finalizar\n");
             op.tipo = Finalizar;
             break;
         case 9:
             // Print Auxiliar para visualização dos testes
-            printf(CYN "> Operacao Print\n" reset);
+            printf("> Operacao Print\n");
             if (fgets(buffer, BUFFSIZE, in))
             {
                 printf("\n==== %s\n", buffer);
@@ -101,7 +88,7 @@ struct Operacao autoInOperacao(FILE *in)
             break;
         default:
             // Padrão
-            printf(CYN "> Valor inválido (%d), finalizando\n" reset, opCode);
+            printf("> Valor inválido (%d), finalizando\n", opCode);
             op.tipo = Finalizar;
             break;
         }
