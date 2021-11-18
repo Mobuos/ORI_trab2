@@ -45,7 +45,7 @@ bool criaArvore(int t, ArvoreB **arvoreB);
  * buscaArvore()
  * Busca na árvore pela chave
  * 
- * arvoreB: O nó raiz da árvore onde será efetuada a busca
+ * no: O nó raiz da árvore/subarvore onde será efetuada a busca
  * chave: Chave a ser procurada
  * nodeEncontrado: Ponteiro para o nó encontrado
  * 

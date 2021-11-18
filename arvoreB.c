@@ -94,7 +94,7 @@ void divideFilho(Node *no, int i, int t)
     for (int j = 0; j < t - 1; j++)
         z->chaves[j] = y->chaves[j + t];
 
-    //em caso de problema, analisar divisoes de nodes nao folha
+    //*
     if (!y->folha)
     {
         for (int j = 0; j < t; j++)
@@ -104,13 +104,13 @@ void divideFilho(Node *no, int i, int t)
     y->n = t - 1;
 
     //movendo os ponteiros de nodes
-    for (int j = no->n; j < i + 1; j++)
+    for (int j = no->n; j >= i + 1; j--)
         no->pNodes[j + 1] = no->pNodes[j];
 
     no->pNodes[i + 1] = z;
 
     //movendo outras chaves
-    for (int j = no->n - 1; j < i; j++)
+    for (int j = no->n - 1; j >= i; j--)
         no->chaves[j + 1] = no->chaves[j];
 
     no->chaves[i] = y->chaves[t - 1];
