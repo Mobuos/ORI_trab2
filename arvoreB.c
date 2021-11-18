@@ -147,3 +147,22 @@ int insere(Node *r, int chave, int t)
         return insere(r->pNodes[i], chave, t);
     }
 }
+
+// Desaloca uma árvore-B
+void desalocaNodeR(Node **r, int t)
+{
+    // Se existem pNodes não nulos nesse nó, chamar desalocaAB neles
+    Node *node = *r;
+    int i;
+    for(i = 0; i < node->n+1; i++){
+        if(node->pNodes[i] != NULL)
+        {
+            desalocaNodeR(&node->pNodes[i], t);
+        }
+        //free(node->pNodes[i]); 
+    }
+    // Após desalocar (ou não caso não tenha o que desalocar), desalocar o próprio nó
+    free(node->pNodes);
+    free(node->chaves);
+    free(node);
+}

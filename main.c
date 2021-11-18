@@ -86,5 +86,7 @@ int main(int argc, char *argv[])
         fclose(inFile);
     }
 
+    desalocaNodeR(&pAB->raiz, pAB->t);
+
     return 0;
 }

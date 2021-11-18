@@ -87,4 +87,13 @@ int insere(Node *r, int i, int t);
  */
 void divideFilho(Node *r, int i, int t);
 
+/*
+ * desalocaNodeR()
+ * Desaloca os nós de um nó recursivamente
+ * 
+ * r: Ponteiro por referência para a raiz da árvore
+ * t: A ordem da árvore a ser desalocada
+ */
+void desalocaNodeR(Node **r, int t);
+
 #endif
