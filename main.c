@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include "interface.h"
@@ -8,7 +9,8 @@
 
 int main(int argc, char *argv[])
 {
-    // Determina se ser√£o usados os testes automatizados
+    setlocale(LC_ALL, "Portuguese");
+    // Determina se ser„o usados os testes automatizados
     bool teste;
     teste = false;
     FILE *inFile;
@@ -25,7 +27,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Recebe a vari√°vel t (Seja do usu√°rio ou do arquivo de testes)
+    // Recebe a vari·vel t (Seja do usu·rio ou do arquivo de testes)
     int t;
     if (teste)
     {
@@ -39,11 +41,11 @@ int main(int argc, char *argv[])
     ArvoreB *pAB = NULL;
     if (!criaArvore(t, &pAB))
     {
-        printf("Erro: Falha ao criar a √°rvore\n");
+        printf("Erro: Falha ao criar a ·rvore\n");
         exit(1);
     }
 
-    // Loop principal de opera√ß√µes sobre a √°rvore B
+    // Loop principal de operaÁıes sobre a ·rvore B
     struct Operacao op = {Finalizar, -1};
     Node *pNodeAtual = NULL;
     int indice;
@@ -63,17 +65,17 @@ int main(int argc, char *argv[])
             indice = insereArvore(pAB, op.param, &pNodeAtual);
             if(indice == -1)
             {
-                printf("Erro: Inser√ß√£o falhou\n");
+                printf("Erro: InserÁ„o falhou\n");
             }
             else if (indice == -2)
             {
-                printf("Erro: Chave j√° existente\n");
+                printf("Erro: Chave j· existente\n");
             }
             else
             {
                 printf("Indice: %d\n", indice);
             }
-            printf("Chave inserida no node de endere√ßo 0x%04lx\n", (uintptr_t)pNodeAtual);
+            printf("Chave inserida no node de endereÁo 0x%04lx\n", (uintptr_t)pNodeAtual);
             break;
         case Busca:
             indice = buscaArvore(pAB->raiz, op.param, &pNodeAtual);
@@ -84,7 +86,7 @@ int main(int argc, char *argv[])
             else
             {
                 printf("Indice: %d\n", indice);
-                printf("Chave encontrada no node de endere√ßo 0x%04lx\n", (uintptr_t)pNodeAtual);
+                printf("Chave encontrada no node de endereÁo 0x%04lx\n", (uintptr_t)pNodeAtual);
             }
             
             break;
@@ -92,13 +94,13 @@ int main(int argc, char *argv[])
             printf("Finalizando...\n");
             break;
         default:
-            printf("Erro: Operacao recebida da interface inv√°lida\n");
+            printf("Erro: Operacao recebida da interface inv·lida\n");
             return 1;
             break;
         }
     } while (op.tipo != Finalizar);
 
-    // Fecha o arquivo de testes caso necess√°rio
+    // Fecha o arquivo de testes caso necess·rio
     if (teste)
     {
         fclose(inFile);
