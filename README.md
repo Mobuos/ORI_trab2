@@ -1,5 +1,10 @@
 # Trabalho de ORI 2
 
+Grupo:
+- Daniel Kenichi Tiago Tateishi (790837)
+- João Dini de Miranda (790716)
+- Martim Fernandes Ribeiro Lima (756187)
+
 ![Diagrama da estrutura](https://i.imgur.com/nNiGyEJ.png)
 
 - Implementar uma árvore-B em _memória principal_
