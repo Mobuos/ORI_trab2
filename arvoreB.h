@@ -51,7 +51,7 @@ bool criaArvore(int t, ArvoreB **arvoreB);
  * 
  * Retorna o índice da chave encontrada, ou -1 caso tenha falhado
 */
-int buscaArvore(Node *no, int chave, Node *nodeEncontrado);
+int buscaArvore(Node *no, int chave, Node **nodeEncontrado);
 
 /*
  * insereArvore()
@@ -61,9 +61,10 @@ int buscaArvore(Node *no, int chave, Node *nodeEncontrado);
  * chave: Chave a ser inserida
  * nodeEncontrado: Ponteiro para o nó inserido
  * 
- * Retorna o índice da chave inserida, ou -1 caso tenha falhado
+ * Retorna o índice da chave inserida,
+ * -1 caso tenha falhado, e -2 caso a chave seja repetida 
  */
-int insereArvore(ArvoreB *arvoreB, int chave, Node *nodeInserido);
+int insereArvore(ArvoreB *arvoreB, int chave, Node **nodeInserido);
 
 /*
  * insere()
@@ -75,7 +76,7 @@ int insereArvore(ArvoreB *arvoreB, int chave, Node *nodeInserido);
  * 
  * Retorna o indice da chave inserida
  */
-int insere(Node *r, int i, int t);
+int insere(Node *r, int i, int t, Node **nodeInserido);
 
 /*
  * divideFilho()

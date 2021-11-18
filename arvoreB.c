@@ -36,7 +36,7 @@ bool criaArvore(int t, ArvoreB **arvoreB)
 }
 
 // Busca a árvore pelo nó, retorna o indíce e o nó encontrado por referência
-int buscaArvore(Node *no, int chave, Node *nodeEncontrado)
+int buscaArvore(Node *no, int chave, Node **nodeEncontrado)
 {
     int i = 0;
 
@@ -45,11 +45,13 @@ int buscaArvore(Node *no, int chave, Node *nodeEncontrado)
         i++;
     }
 
+    // Encontrou?
     if (i < no->n && no->chaves[i] == chave)
     {
-        nodeEncontrado = no;
+        *nodeEncontrado = no;
         return i;
     }
+    // Chegou no final da árvore?
     else if (no->folha)
     {
         return -1;
@@ -58,10 +60,15 @@ int buscaArvore(Node *no, int chave, Node *nodeEncontrado)
 }
 
 // Insere na árvore a chave, retorna o índice dela e o nó
-int insereArvore(ArvoreB *arvoreB, int chave, Node *nodeInserido)
+int insereArvore(ArvoreB *arvoreB, int chave, Node **nodeInserido)
 {
     if (arvoreB == NULL)
         return -1;
+
+    if (buscaArvore(arvoreB->raiz, chave, nodeInserido) != -1){
+        return -2;
+    }
+    
     Node *r = arvoreB->raiz;
 
     // Árvore está cheia?
@@ -73,11 +80,11 @@ int insereArvore(ArvoreB *arvoreB, int chave, Node *nodeInserido)
         aux->pNodes[0] = r;
 
         divideFilho(aux, 0, arvoreB->t);
-        return insere(aux, chave, arvoreB->t);
+        return insere(aux, chave, arvoreB->t, nodeInserido);
     }
     else
     {
-        return insere(r, chave, arvoreB->t);
+        return insere(r, chave, arvoreB->t, nodeInserido);
     }
 
     return -1;
@@ -91,10 +98,11 @@ void divideFilho(Node *no, int i, int t)
     z->folha = y->folha;
     z->n = t - 1;
 
+    // Copiando as chaves para o novo nó
     for (int j = 0; j < t - 1; j++)
         z->chaves[j] = y->chaves[j + t];
 
-    //*
+    // Para nós não folha, copiar os ponteiros dos filhos de y->z
     if (!y->folha)
     {
         for (int j = 0; j < t; j++)
@@ -103,13 +111,13 @@ void divideFilho(Node *no, int i, int t)
 
     y->n = t - 1;
 
-    //movendo os ponteiros de nodes
+    // Movendo os ponteiros de nodes
     for (int j = no->n; j >= i + 1; j--)
         no->pNodes[j + 1] = no->pNodes[j];
 
     no->pNodes[i + 1] = z;
 
-    //movendo outras chaves
+    // Movendo outras chaves
     for (int j = no->n - 1; j >= i; j--)
         no->chaves[j + 1] = no->chaves[j];
 
@@ -118,10 +126,11 @@ void divideFilho(Node *no, int i, int t)
 }
 
 // Insere um nó em uma árvore B não-cheia.
-int insere(Node *r, int chave, int t)
+int insere(Node *r, int chave, int t, Node **nodeInserido)
 {
     int i = r->n - 1;
 
+    // Caso Folha
     if (r->folha)
     {
         while (i >= 0 && chave < r->chaves[i])
@@ -131,8 +140,10 @@ int insere(Node *r, int chave, int t)
         }
         r->chaves[i + 1] = chave;
         r->n = r->n + 1;
+        *nodeInserido = r;
         return i + 1;
     }
+    // Caso não-folha
     else
     {
         while (i >= 0 && chave < r->chaves[i])
@@ -144,7 +155,7 @@ int insere(Node *r, int chave, int t)
             if (chave > r->chaves[i])
                 i++;
         }
-        return insere(r->pNodes[i], chave, t);
+        return insere(r->pNodes[i], chave, t, nodeInserido);
     }
 }
 
@@ -158,7 +169,6 @@ void desalocaNodeR(Node *node)
         {
             desalocaNodeR(node->pNodes[i]);
         }
-        //free(node->pNodes[i]); 
     }
     // Após desalocar (ou não caso não tenha o que desalocar), desalocar o próprio nó
     free(node->pNodes);

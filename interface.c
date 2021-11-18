@@ -23,7 +23,7 @@ int lerNatural(char msgErro[])
         // Convertendo para int
         char *endptr;
 
-        errno = 0; // reset error number
+        errno = 0; // Reseta errno
         valor = (int)strtol(buffer, &endptr, 10);
         if (errno == ERANGE)
         {
@@ -68,14 +68,12 @@ int lerNatural(char msgErro[])
 // Retorna a ordem (t) requisitada
 int inputOrdem()
 {
-    //int t = 0;
     printf("Ordem: ");
-    //scanf("%d", &t);
     int t = lerNatural("Por favor digite um valor válido: ");
     return t;
 }
 
-/// Retorna um struct da operação requisitada
+// Retorna um struct da operação requisitada
 struct Operacao inputOperacao()
 {
     int opCode = 0;

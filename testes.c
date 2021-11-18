@@ -22,8 +22,6 @@ int lerProxInteiro(FILE *in)
     }
 }
 
-//TODO Verificações aqui
-
 // Retorna a ordem (t) requisitada
 int autoInOrdem(FILE *in)
 {

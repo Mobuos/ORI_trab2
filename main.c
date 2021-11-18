@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include "interface.h"
 #include "testes.h"
 #include "arvoreB.h"
@@ -35,9 +36,7 @@ int main(int argc, char *argv[])
         t = inputOrdem(inFile);
     }
 
-    //TODO: Criar árvore de ordem t
     ArvoreB *pAB = NULL;
-    //printf("main: Criar arvore de ordem %d\n", t);
     if (!criaArvore(t, &pAB))
     {
         printf("Erro: Falha ao criar a árvore\n");
@@ -61,14 +60,33 @@ int main(int argc, char *argv[])
         switch (op.tipo)
         {
         case Insercao:
-            //printf("main: Insercao de %d\n", op.param);
-            indice = insereArvore(pAB, op.param, pNodeAtual);
-            indice != -1 ? printf("Indice: %d\n", indice) : printf("Erro: Insercao falhou\n");
+            indice = insereArvore(pAB, op.param, &pNodeAtual);
+            if(indice == -1)
+            {
+                printf("Erro: Inserção falhou\n");
+            }
+            else if (indice == -2)
+            {
+                printf("Erro: Chave já existente\n");
+            }
+            else
+            {
+                printf("Indice: %d\n", indice);
+            }
+            printf("Chave inserida no node de endereço 0x%04lx\n", (uintptr_t)pNodeAtual);
             break;
         case Busca:
-            //printf("main: Busca de %d\n", op.param);
-            indice = buscaArvore(pAB->raiz, op.param, pNodeAtual);
-            indice != -1 ? printf("Indice: %d\n", indice) : printf("CHAVE NAO ENCONTRADA!\n");
+            indice = buscaArvore(pAB->raiz, op.param, &pNodeAtual);
+            if (indice == -1)
+            {
+                printf("CHAVE NAO ENCONTRADA!\n");
+            }
+            else
+            {
+                printf("Indice: %d\n", indice);
+                printf("Chave encontrada no node de endereço 0x%04lx\n", (uintptr_t)pNodeAtual);
+            }
+            
             break;
         case Finalizar:
             printf("Finalizando...\n");
