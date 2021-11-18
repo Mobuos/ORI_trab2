@@ -149,15 +149,14 @@ int insere(Node *r, int chave, int t)
 }
 
 // Desaloca uma árvore-B
-void desalocaNodeR(Node **r, int t)
+void desalocaNodeR(Node *node)
 {
     // Se existem pNodes não nulos nesse nó, chamar desalocaAB neles
-    Node *node = *r;
     int i;
     for(i = 0; i < node->n+1; i++){
         if(node->pNodes[i] != NULL)
         {
-            desalocaNodeR(&node->pNodes[i], t);
+            desalocaNodeR(node->pNodes[i]);
         }
         //free(node->pNodes[i]); 
     }
