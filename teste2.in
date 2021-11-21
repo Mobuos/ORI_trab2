@@ -3,10 +3,12 @@
 Iniciando Insercoes (1/2):
 2 # Inserção 10
 10
-2 # Inserção 9
-9
+2 # Inserção -9
+-9
 2 # Inserção 30
 30
+2 # Inserção -50
+-50
 2 # Inserção 30 (Repetido)
 30
 2 # Inserção 20
@@ -15,10 +17,10 @@ Iniciando Insercoes (1/2):
 26
 2 # Inserção 31
 31
-2 # Inserção 23
-23
-2 # Inserção 9 (Repetido)
-9
+2 # Inserção -23
+-23
+2 # Inserção -9 (Repetido)
+-9
 2 # Inserção 17
 17
 2 # Inserção 18
@@ -37,16 +39,24 @@ Iniciando Buscas (1/2):
 31
 1 # Busca 20 (✔)
 20
+1 # Busca -50 (✔)
+-50
 1 # Busca 30 (✔)
 30
 1 # Busca 10 (✔)
 10
+1 # Busca -23 (✔)
+-23
 9 # PRINT AUXILIAR
 Iniciando Insercoes (2/2):
 2 # Inserção 2
 2
 2 # Inserção 6
 6
+2 # Inserção -1
+-1
+2 # Inserção -12
+-12
 2 # Inserção 19
 19
 2 # Inserção 30 (Repetido)
@@ -83,6 +93,10 @@ Iniciando Buscas (2/2):
 29
 1 # Busca 30 (✔)
 30
+1 # Busca -1 (✔)
+-1
+1 # Busca -12 (✔)
+-12
 1 # Busca 31 (✔)
 31
 1 # Busca 48 (✔)
@@ -91,6 +105,8 @@ Iniciando Buscas (2/2):
 2
 1 # Busca 45 (✔)
 45
+1 # Busca -9 (✔)
+-9
 1 # Busca 10 (✔)
 10
 9 # PRINT AUXILIAR

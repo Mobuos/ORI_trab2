@@ -28,7 +28,7 @@ struct Operacao
 };
 
 /*
- * lerNatural()
+ * lerInteiro()
  * Lê um número positivo e inteiro (Natural) da entrada padrão
  * 
  * msgErro: Mensagem apresentada ao usuário caso a entrada não seja válida
@@ -37,7 +37,7 @@ struct Operacao
  * Retorna o número lido.
  * (Fonte: http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
  */
-int lerNatural(char msgErro[]);
+int lerInteiro(char msgErro[]);
 
 /*
  * inputOrdem()

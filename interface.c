@@ -14,7 +14,7 @@ interface.c
 #define BUFFSIZE 1024
 
 // Lê um inteiro positivo, usa uma mensagem de erro para tentar novamente
-int lerNatural(char msgErro[])
+int lerInteiro(char msgErro[])
 {
     int valor;
     char buffer[BUFFSIZE];
@@ -58,14 +58,7 @@ int lerNatural(char msgErro[])
         }
         else
         {
-            if (valor >= 0)
-            {
-                sucesso = 1;
-            }
-            else
-            {
-                sucesso = 0;
-            }
+            sucesso = 1;
         }
     } while (!sucesso); // Repetir até obter um número apropriado
 
@@ -76,7 +69,7 @@ int lerNatural(char msgErro[])
 int inputOrdem()
 {
     printf("Ordem: ");
-    int t = lerNatural("Por favor digite um valor válido: ");
+    int t = lerInteiro("Por favor digite um valor válido: ");
     return t;
 }
 
@@ -92,21 +85,21 @@ struct Operacao inputOperacao()
     {
         sucesso = 1;
         printf("=== Digite a operação requisitada ===\n (1) - Busca\n (2) - Insercao\n (3) - Sair\n");
-        opCode = lerNatural("Número inválido, tente novamente: ");
+        opCode = lerInteiro("Número inválido, tente novamente: ");
 
         switch (opCode)
         {
         case 1:
             // Busca
             printf("Digite a chave a ser buscada: ");
-            param = lerNatural("Digite uma chave válida: ");
+            param = lerInteiro("Digite uma chave válida: ");
             op.tipo = Busca;
             op.param = param;
             break;
         case 2:
             // Inserção
             printf("Digite a chave a ser inserida: ");
-            param = lerNatural("Digite uma chave válida: ");
+            param = lerInteiro("Digite uma chave válida: ");
             op.tipo = Insercao;
             op.param = param;
             break;
