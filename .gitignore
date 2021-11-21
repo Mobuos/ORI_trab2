@@ -31,6 +31,6 @@
 
 # Executables
 *.exe
-*.out
+#*.out
 *.app
 main

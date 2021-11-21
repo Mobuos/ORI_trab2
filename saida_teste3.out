@@ -1,0 +1,185 @@
+> Lendo ordem do arquivo...
+> ordem = 2
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Insercoes:
+
+> Operacao insercao (10)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (9)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (30)
+Indice: 2
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (30)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (20)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao insercao (26)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao insercao (31)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270a90
+> Lendo operacao...
+> Operacao insercao (23)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao insercao (9)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (17)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao insercao (18)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao insercao (29)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270a90
+> Lendo operacao...
+> Operacao insercao (5)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (0)
+Indice: 0
+Chave inserida no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao insercao (40)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270c50
+> Lendo operacao...
+> Operacao insercao (50)
+Indice: 2
+Chave inserida no node de endereço 0x5590ee270c50
+> Lendo operacao...
+> Operacao insercao (60)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270cc0
+> Lendo operacao...
+> Operacao insercao (70)
+Indice: 2
+Chave inserida no node de endereço 0x5590ee270cc0
+> Lendo operacao...
+> Operacao insercao (80)
+Indice: 1
+Chave inserida no node de endereço 0x5590ee270da0
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas por todas as chaves inseridas:
+
+> Operacao busca (10)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee2709b0
+> Lendo operacao...
+> Operacao busca (9)
+Indice: 2
+Chave encontrada no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao busca (30)
+Indice: 1
+Chave encontrada no node de endereço 0x5590ee270b70
+> Lendo operacao...
+> Operacao busca (20)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270b70
+> Lendo operacao...
+> Operacao busca (26)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270be0
+> Lendo operacao...
+> Operacao busca (31)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270c50
+> Lendo operacao...
+> Operacao busca (23)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270b00
+> Lendo operacao...
+> Operacao busca (17)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao busca (18)
+Indice: 1
+Chave encontrada no node de endereço 0x5590ee270a20
+> Lendo operacao...
+> Operacao busca (29)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270a90
+> Lendo operacao...
+> Operacao busca (5)
+Indice: 1
+Chave encontrada no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao busca (0)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270970
+> Lendo operacao...
+> Operacao busca (40)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270d30
+> Lendo operacao...
+> Operacao busca (50)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270cc0
+> Lendo operacao...
+> Operacao busca (60)
+Indice: 1
+Chave encontrada no node de endereço 0x5590ee270d30
+> Lendo operacao...
+> Operacao busca (70)
+Indice: 0
+Chave encontrada no node de endereço 0x5590ee270da0
+> Lendo operacao...
+> Operacao busca (80)
+Indice: 1
+Chave encontrada no node de endereço 0x5590ee270da0
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (Esperando não encontrar):
+
+> Operacao busca (999999)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (55)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (98)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (14)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (53)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (91)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (111)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (13)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao finalizar
+Finalizando...

@@ -1,0 +1,108 @@
+> Lendo ordem do arquivo...
+> ordem = 2
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Insercoes:
+
+> Operacao insercao (2)
+Indice: 0
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (6)
+Indice: 1
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (8)
+Indice: 2
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (8)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (10)
+Indice: 1
+Chave inserida no node de endereço 0x55faf7679a20
+> Lendo operacao...
+> Operacao insercao (1)
+Indice: 0
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (30)
+Indice: 2
+Chave inserida no node de endereço 0x55faf7679a20
+> Lendo operacao...
+> Operacao insercao (15)
+Indice: 0
+Chave inserida no node de endereço 0x55faf7679a90
+> Lendo operacao...
+> Operacao insercao (2)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (23)
+Indice: 1
+Chave inserida no node de endereço 0x55faf7679a90
+> Lendo operacao...
+> Operacao insercao (18)
+Indice: 1
+Chave inserida no node de endereço 0x55faf7679a90
+> Lendo operacao...
+> Operacao insercao (29)
+Indice: 0
+Chave inserida no node de endereço 0x55faf7679b00
+> Lendo operacao...
+> Operacao insercao (5)
+Indice: 2
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao insercao (0)
+Indice: 0
+Chave inserida no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (Esperando encontrar):
+
+> Operacao busca (0)
+Indice: 0
+Chave encontrada no node de endereço 0x55faf7679970
+> Lendo operacao...
+> Operacao busca (8)
+Indice: 0
+Chave encontrada no node de endereço 0x55faf7679a20
+> Lendo operacao...
+> Operacao busca (30)
+Indice: 1
+Chave encontrada no node de endereço 0x55faf7679b00
+> Lendo operacao...
+> Operacao busca (23)
+Indice: 0
+Chave encontrada no node de endereço 0x55faf7679be0
+> Lendo operacao...
+> Operacao busca (5)
+Indice: 0
+Chave encontrada no node de endereço 0x55faf7679c50
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (Esperando NÃO encontrar):
+
+> Operacao busca (50)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (9)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (11)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (12)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (128398193)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao finalizar
+Finalizando...

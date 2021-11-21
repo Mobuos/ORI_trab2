@@ -1,0 +1,221 @@
+> Lendo ordem do arquivo...
+> ordem = 2
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Insercoes (1/2):
+
+> Operacao insercao (10)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (9)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (30)
+Indice: 2
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (30)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (20)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (26)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (31)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao insercao (23)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (9)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (17)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (18)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (29)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao insercao (5)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (0)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (1/2):
+
+> Operacao busca (29)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao busca (31)
+Indice: 2
+Chave encontrada no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao busca (20)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fb70
+> Lendo operacao...
+> Operacao busca (30)
+Indice: 1
+Chave encontrada no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao busca (10)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212f9b0
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Insercoes (2/2):
+
+> Operacao insercao (2)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (6)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fc50
+> Lendo operacao...
+> Operacao insercao (19)
+Indice: 2
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (30)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao insercao (21)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fb00
+> Lendo operacao...
+> Operacao insercao (90)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao insercao (12345)
+Indice: 2
+Chave inserida no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao insercao (12)
+Indice: 0
+Chave inserida no node de endereço 0x5607b212fa20
+> Lendo operacao...
+> Operacao insercao (2)
+Erro: Chave já existente
+Chave inserida no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao insercao (45)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao insercao (46)
+Indice: 2
+Chave inserida no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao insercao (47)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fe80
+> Lendo operacao...
+> Operacao insercao (48)
+Indice: 2
+Chave inserida no node de endereço 0x5607b212fe80
+> Lendo operacao...
+> Operacao insercao (33)
+Indice: 1
+Chave inserida no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (2/2):
+
+> Operacao busca (12345)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fda0
+> Lendo operacao...
+> Operacao busca (45)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fe10
+> Lendo operacao...
+> Operacao busca (33)
+Indice: 1
+Chave encontrada no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao busca (29)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fa90
+> Lendo operacao...
+> Operacao busca (30)
+Indice: 1
+Chave encontrada no node de endereço 0x5607b212fb70
+> Lendo operacao...
+> Operacao busca (31)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fcc0
+> Lendo operacao...
+> Operacao busca (48)
+Indice: 2
+Chave encontrada no node de endereço 0x5607b212fe80
+> Lendo operacao...
+> Operacao busca (2)
+Indice: 1
+Chave encontrada no node de endereço 0x5607b212f970
+> Lendo operacao...
+> Operacao busca (45)
+Indice: 0
+Chave encontrada no node de endereço 0x5607b212fe10
+> Lendo operacao...
+> Operacao busca (10)
+Indice: 1
+Chave encontrada no node de endereço 0x5607b212f9b0
+> Lendo operacao...
+> Operacao Print
+
+==== Iniciando Buscas (Esperando não encontrar):
+
+> Operacao busca (999999)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (55)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (98)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (14)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (50)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (91)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (111)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao busca (13)
+CHAVE NAO ENCONTRADA!
+> Lendo operacao...
+> Operacao finalizar
+Finalizando...
