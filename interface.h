@@ -41,7 +41,7 @@ int lerInteiro(char msgErro[]);
 
 /*
  * inputOrdem()
- * Adquire a ordem da árvore (t)
+ * Adquire a ordem da árvore (t), seguindo o requerimento de t>=2
  * 
  * Retorna a ordem de árvore requisitada pelo usuário
  */

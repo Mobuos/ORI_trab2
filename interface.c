@@ -69,7 +69,19 @@ int lerInteiro(char msgErro[])
 int inputOrdem()
 {
     printf("Ordem: ");
-    int t = lerInteiro("Por favor digite um valor válido: ");
+    int t, sucesso;
+    do
+    {
+        sucesso = 0;
+        t = lerInteiro("Por favor digite um valor válido: ");
+        if(t >= 2){
+            sucesso = 1;
+        }
+        else
+        {
+            printf("Por favor digite um valor maior ou igual a 2: ");
+        }
+    } while(!sucesso);
     return t;
 }
 
