@@ -1,3 +1,10 @@
+/*
+interface.h
+
+    Daniel Kenichi Tiago Tateishi RA: 790837
+    João Dini de Miranda RA: 790716
+    Martim Fernandes Ribeiro Lima RA: 756187
+*/
 #ifndef INTERFACE_H
 #define INTERFACE_H
 #include <errno.h>

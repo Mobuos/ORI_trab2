@@ -1,3 +1,10 @@
+/*
+main.c
+
+    Daniel Kenichi Tiago Tateishi RA: 790837
+    João Dini de Miranda RA: 790716
+    Martim Fernandes Ribeiro Lima RA: 756187
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -94,7 +101,7 @@ int main(int argc, char *argv[])
             printf("Finalizando...\n");
             break;
         default:
-            printf("Erro: Operacao recebida da interface inv�lida\n");
+            printf("Erro: Operacao recebida da interface inválida\n");
             return 1;
             break;
         }

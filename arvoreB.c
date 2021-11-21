@@ -1,3 +1,10 @@
+/*
+arvoreB.c
+
+    Daniel Kenichi Tiago Tateishi RA: 790837
+    João Dini de Miranda RA: 790716
+    Martim Fernandes Ribeiro Lima RA: 756187
+*/
 #include <stdlib.h>
 #include "arvoreB.h"
 
