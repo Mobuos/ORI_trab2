@@ -94,6 +94,12 @@ int main(int argc, char *argv[])
             {
                 printf("Indice: %d\n", indice);
                 printf("Chave encontrada no node de endereço 0x%04lx\n", (uintptr_t)pNodeAtual);
+                int i;
+                printf("Nos do no inserido: ");
+                for(i = 0; i < pNodeAtual->n; i++){
+                    printf("%d ", pNodeAtual->chaves[i]);
+                }
+                printf("\n");
             }
             
             break;
